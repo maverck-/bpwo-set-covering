@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Trayectorias completas y puntos de control: regenerables y de gran tamaño.
+results/*/checkpoints/
+results/*/history.csv
+results/*/*-history.csv

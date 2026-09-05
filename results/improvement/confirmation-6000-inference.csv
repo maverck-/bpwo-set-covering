@@ -1,0 +1,46 @@
+scope,instance,test,reference,comparison,statistic,p_value,p_value_holm,alpha,reject_null,effect_name,effect_value,n_reference,n_comparison,notes
+instance,scp43,Shapiro-Wilk,BPWO_BASE|PWO|V3-ELIT,N/A,1.0,1.0,N/A,0.05,False,N/A,N/A,5,N/A,Muestra constante: la normalidad no es informativa y se registra p=1 para evitar un valor indefinido.
+instance,scp43,Shapiro-Wilk,BPWO_PROB|PWO|V3-ELIT,N/A,1.0,1.0,N/A,0.05,False,N/A,N/A,5,N/A,Muestra constante: la normalidad no es informativa y se registra p=1 para evitar un valor indefinido.
+instance,scp43,Kruskal-Wallis,ALL,ALL,0.0,1.0,N/A,0.05,False,N/A,N/A,N/A,N/A,Contraste global entre configuraciones estocásticas.
+instance,scp43,Mann-Whitney U,BPWO_BASE|PWO|V3-ELIT,BPWO_PROB|PWO|V3-ELIT,12.5,1.0,1.0,0.05,False,Cliff delta,0.0,5,5,Delta negativo favorece a la referencia en un problema de minimización.
+instance,scp53,Shapiro-Wilk,BPWO_BASE|PWO|V3-ELIT,N/A,0.5521816830869036,0.00013097817585188158,N/A,0.05,True,N/A,N/A,5,N/A,Prueba diagnóstica de normalidad; no selecciona por sí sola la prueba principal.
+instance,scp53,Shapiro-Wilk,BPWO_PROB|PWO|V3-ELIT,N/A,0.5521816830869036,0.00013097817585188158,N/A,0.05,True,N/A,N/A,5,N/A,Prueba diagnóstica de normalidad; no selecciona por sí sola la prueba principal.
+instance,scp53,Kruskal-Wallis,ALL,ALL,0.022222222222230956,0.8814974521909904,N/A,0.05,False,N/A,N/A,N/A,N/A,Contraste global entre configuraciones estocásticas.
+instance,scp53,Mann-Whitney U,BPWO_BASE|PWO|V3-ELIT,BPWO_PROB|PWO|V3-ELIT,13.0,1.0,1.0,0.05,False,Cliff delta,0.04,5,5,Delta negativo favorece a la referencia en un problema de minimización.
+instance,scp63,Shapiro-Wilk,BPWO_BASE|PWO|V3-ELIT,N/A,1.0,1.0,N/A,0.05,False,N/A,N/A,5,N/A,Muestra constante: la normalidad no es informativa y se registra p=1 para evitar un valor indefinido.
+instance,scp63,Shapiro-Wilk,BPWO_PROB|PWO|V3-ELIT,N/A,1.0,1.0,N/A,0.05,False,N/A,N/A,5,N/A,Muestra constante: la normalidad no es informativa y se registra p=1 para evitar un valor indefinido.
+instance,scp63,Kruskal-Wallis,ALL,ALL,0.0,1.0,N/A,0.05,False,N/A,N/A,N/A,N/A,Contraste global entre configuraciones estocásticas.
+instance,scp63,Mann-Whitney U,BPWO_BASE|PWO|V3-ELIT,BPWO_PROB|PWO|V3-ELIT,12.5,1.0,1.0,0.05,False,Cliff delta,0.0,5,5,Delta negativo favorece a la referencia en un problema de minimización.
+instance,scpa3,Shapiro-Wilk,BPWO_BASE|PWO|V3-ELIT,N/A,0.5521816830869035,0.00013097817585188055,N/A,0.05,True,N/A,N/A,5,N/A,Prueba diagnóstica de normalidad; no selecciona por sí sola la prueba principal.
+instance,scpa3,Shapiro-Wilk,BPWO_PROB|PWO|V3-ELIT,N/A,0.792775931479871,0.07066879941343329,N/A,0.05,False,N/A,N/A,5,N/A,Prueba diagnóstica de normalidad; no selecciona por sí sola la prueba principal.
+instance,scpa3,Kruskal-Wallis,ALL,ALL,2.358139534883712,0.12463074707695582,N/A,0.05,False,N/A,N/A,N/A,N/A,Contraste global entre configuraciones estocásticas.
+instance,scpa3,Mann-Whitney U,BPWO_BASE|PWO|V3-ELIT,BPWO_PROB|PWO|V3-ELIT,6.0,0.15633719878884622,0.15633719878884622,0.05,False,Cliff delta,-0.52,5,5,Delta negativo favorece a la referencia en un problema de minimización.
+instance,scpb3,Shapiro-Wilk,BPWO_BASE|PWO|V3-ELIT,N/A,1.0,1.0,N/A,0.05,False,N/A,N/A,5,N/A,Muestra constante: la normalidad no es informativa y se registra p=1 para evitar un valor indefinido.
+instance,scpb3,Shapiro-Wilk,BPWO_PROB|PWO|V3-ELIT,N/A,1.0,1.0,N/A,0.05,False,N/A,N/A,5,N/A,Muestra constante: la normalidad no es informativa y se registra p=1 para evitar un valor indefinido.
+instance,scpb3,Kruskal-Wallis,ALL,ALL,0.0,1.0,N/A,0.05,False,N/A,N/A,N/A,N/A,Contraste global entre configuraciones estocásticas.
+instance,scpb3,Mann-Whitney U,BPWO_BASE|PWO|V3-ELIT,BPWO_PROB|PWO|V3-ELIT,12.5,1.0,1.0,0.05,False,Cliff delta,0.0,5,5,Delta negativo favorece a la referencia en un problema de minimización.
+instance,scpc3,Shapiro-Wilk,BPWO_BASE|PWO|V3-ELIT,N/A,0.9136686624515921,0.4899476106466497,N/A,0.05,False,N/A,N/A,5,N/A,Prueba diagnóstica de normalidad; no selecciona por sí sola la prueba principal.
+instance,scpc3,Shapiro-Wilk,BPWO_PROB|PWO|V3-ELIT,N/A,0.9020198205852653,0.4211496560820923,N/A,0.05,False,N/A,N/A,5,N/A,Prueba diagnóstica de normalidad; no selecciona por sí sola la prueba principal.
+instance,scpc3,Kruskal-Wallis,ALL,ALL,1.153846153846149,0.2827454599327725,N/A,0.05,False,N/A,N/A,N/A,N/A,Contraste global entre configuraciones estocásticas.
+instance,scpc3,Mann-Whitney U,BPWO_BASE|PWO|V3-ELIT,BPWO_PROB|PWO|V3-ELIT,17.5,0.33366648508297103,0.33366648508297103,0.05,False,Cliff delta,0.4,5,5,Delta negativo favorece a la referencia en un problema de minimización.
+instance,scpd3,Shapiro-Wilk,BPWO_BASE|PWO|V3-ELIT,N/A,0.8810376387926065,0.3140395571094379,N/A,0.05,False,N/A,N/A,5,N/A,Prueba diagnóstica de normalidad; no selecciona por sí sola la prueba principal.
+instance,scpd3,Shapiro-Wilk,BPWO_PROB|PWO|V3-ELIT,N/A,0.8834906929390459,0.32542950404417703,N/A,0.05,False,N/A,N/A,5,N/A,Prueba diagnóstica de normalidad; no selecciona por sí sola la prueba principal.
+instance,scpd3,Kruskal-Wallis,ALL,ALL,2.15744680851063,0.14188026800660403,N/A,0.05,False,N/A,N/A,N/A,N/A,Contraste global entre configuraciones estocásticas.
+instance,scpd3,Mann-Whitney U,BPWO_BASE|PWO|V3-ELIT,BPWO_PROB|PWO|V3-ELIT,6.0,0.17515057810298873,0.17515057810298873,0.05,False,Cliff delta,-0.52,5,5,Delta negativo favorece a la referencia en un problema de minimización.
+instance,scpnre3,Shapiro-Wilk,BPWO_BASE|PWO|V3-ELIT,N/A,0.5521816830869036,0.00013097817585188158,N/A,0.05,True,N/A,N/A,5,N/A,Prueba diagnóstica de normalidad; no selecciona por sí sola la prueba principal.
+instance,scpnre3,Shapiro-Wilk,BPWO_PROB|PWO|V3-ELIT,N/A,0.5521816830869036,0.00013097817585188158,N/A,0.05,True,N/A,N/A,5,N/A,Prueba diagnóstica de normalidad; no selecciona por sí sola la prueba principal.
+instance,scpnre3,Kruskal-Wallis,ALL,ALL,0.0,1.0,N/A,0.05,False,N/A,N/A,N/A,N/A,Contraste global entre configuraciones estocásticas.
+instance,scpnre3,Mann-Whitney U,BPWO_BASE|PWO|V3-ELIT,BPWO_PROB|PWO|V3-ELIT,12.5,1.0,1.0,0.05,False,Cliff delta,0.0,5,5,Delta negativo favorece a la referencia en un problema de minimización.
+instance,scpnrf3,Shapiro-Wilk,BPWO_BASE|PWO|V3-ELIT,N/A,0.5521816830869035,0.00013097817585188055,N/A,0.05,True,N/A,N/A,5,N/A,Prueba diagnóstica de normalidad; no selecciona por sí sola la prueba principal.
+instance,scpnrf3,Shapiro-Wilk,BPWO_PROB|PWO|V3-ELIT,N/A,1.0,1.0,N/A,0.05,False,N/A,N/A,5,N/A,Muestra constante: la normalidad no es informativa y se registra p=1 para evitar un valor indefinido.
+instance,scpnrf3,Kruskal-Wallis,ALL,ALL,1.0000000000000024,0.31731050786291065,N/A,0.05,False,N/A,N/A,N/A,N/A,Contraste global entre configuraciones estocásticas.
+instance,scpnrf3,Mann-Whitney U,BPWO_BASE|PWO|V3-ELIT,BPWO_PROB|PWO|V3-ELIT,15.0,0.4237107971667934,0.4237107971667934,0.05,False,Cliff delta,0.2,5,5,Delta negativo favorece a la referencia en un problema de minimización.
+instance,scpnrg3,Shapiro-Wilk,BPWO_BASE|PWO|V3-ELIT,N/A,0.9100247590329358,0.46773919127396046,N/A,0.05,False,N/A,N/A,5,N/A,Prueba diagnóstica de normalidad; no selecciona por sí sola la prueba principal.
+instance,scpnrg3,Shapiro-Wilk,BPWO_PROB|PWO|V3-ELIT,N/A,0.9608589991485151,0.8139521273570305,N/A,0.05,False,N/A,N/A,5,N/A,Prueba diagnóstica de normalidad; no selecciona por sí sola la prueba principal.
+instance,scpnrg3,Kruskal-Wallis,ALL,ALL,0.04615384615384176,0.8298963832086623,N/A,0.05,False,N/A,N/A,N/A,N/A,Contraste global entre configuraciones estocásticas.
+instance,scpnrg3,Mann-Whitney U,BPWO_BASE|PWO|V3-ELIT,BPWO_PROB|PWO|V3-ELIT,13.5,0.9144579851508905,0.9144579851508905,0.05,False,Cliff delta,0.08,5,5,Delta negativo favorece a la referencia en un problema de minimización.
+instance,scpnrh3,Shapiro-Wilk,BPWO_BASE|PWO|V3-ELIT,N/A,0.8810376387926065,0.3140395571094379,N/A,0.05,False,N/A,N/A,5,N/A,Prueba diagnóstica de normalidad; no selecciona por sí sola la prueba principal.
+instance,scpnrh3,Shapiro-Wilk,BPWO_PROB|PWO|V3-ELIT,N/A,0.820834674605365,0.11850988780546529,N/A,0.05,False,N/A,N/A,5,N/A,Prueba diagnóstica de normalidad; no selecciona por sí sola la prueba principal.
+instance,scpnrh3,Kruskal-Wallis,ALL,ALL,0.11020408163264854,0.7399119113256085,N/A,0.05,False,N/A,N/A,N/A,N/A,Contraste global entre configuraciones estocásticas.
+instance,scpnrh3,Mann-Whitney U,BPWO_BASE|PWO|V3-ELIT,BPWO_PROB|PWO|V3-ELIT,14.0,0.8248484683027386,0.8248484683027386,0.05,False,Cliff delta,0.12,5,5,Delta negativo favorece a la referencia en un problema de minimización.
+global,ALL,Wilcoxon signed-rank,BPWO_BASE|PWO|V3-ELIT,BPWO_PROB|PWO|V3-ELIT,28.0,0.75,0.75,0.05,False,N/A,N/A,11,11,"Comparación post-hoc de medianas por instancia, con corrección de Holm."

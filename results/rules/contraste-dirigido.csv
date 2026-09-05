@@ -1,0 +1,7 @@
+algoritmo,rotulo,corridas,rpd_medio,aciertos,explotacion,factibilidad_previa,agregadas_por_evaluacion,eliminadas_por_evaluacion,diversidad_mediana
+BPWO_BASE,Referencia congelada,55,1.473,20,0.9785,0.0007,19.65,2.57,0.0001
+BPWO_RALLY,Cohesión corregida,55,1.3273,20,0.0016,0.0007,19.64,2.55,0.0001
+BPWO_ANCHOR,"Anclaje kappa=4, S1-STD",55,4.3455,5,0.0003,0.9563,0.15,1.58,0.0
+ALPHA_S1,Control sin ecuaciones PWO,55,9.884,1,0.0,0.8714,0.2,32.78,0.0
+BPWO_S2_STD,"S2-STD, kappa=1",55,35.7918,2,0.4012,0.9802,0.02,1139.92,0.0139
+BPWO_V3_COMP,"V3-COMP, kappa=1",55,31.9622,2,0.4098,1.0,0.0,2998.31,0.0148

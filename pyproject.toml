@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bpwo-scp"
+version = "0.1.0"
+description = "Variante binaria corregida de Painted Wolf Optimization para Set Covering"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+analysis = ["scipy>=1.11"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,6 @@
+instance,role,scale,algorithm,movement_mode,scheme,runs,final_diversity_median,minimum_diversity_median,trajectory_diversity_median,exploitation_rate_median,restart_rate_median,initially_feasible_rate_mean,added_per_iteration_mean,removed_per_iteration_mean
+scpnrg1,calibration,very_large,ABLATION_IID,IID,S2-ELIT,1,0.000184,7.2e-05,0.00023200000000000003,0.0,0.0,0.0,653.7462437395659,84.15859766277129
+scpnrg1,calibration,very_large,BGWO,REFERENCE,V3-ELIT,1,0.000382,0.0,0.0006039999999999999,N/A,N/A,0.0,400.18196994991655,50.22704507512521
+scpnrg1,calibration,very_large,BPSO,REFERENCE,V3-ELIT,1,0.003102,0.000784,0.002654,N/A,N/A,0.0,1082.8848080133555,139.4440734557596
+scpnrg1,calibration,very_large,BPWO,PWO,S2-ELIT,1,0.0001,0.0,0.000148,0.9782971619365609,0.0,0.0,336.3989983305509,33.98330550918197
+scpnrg1,calibration,very_large,BPWO,PWO,V3-ELIT,1,0.00022,0.0,0.00010800000000000001,0.9666110183639399,0.0,0.0,384.54257095158596,57.59098497495826

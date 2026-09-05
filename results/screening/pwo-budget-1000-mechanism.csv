@@ -1,0 +1,5 @@
+instance,role,scale,algorithm,movement_mode,scheme,runs,final_diversity_median,minimum_diversity_median,trajectory_diversity_median,exploitation_rate_median,initially_feasible_rate_mean,added_per_iteration_mean,removed_per_iteration_mean
+scpnrg1,unspecified,unspecified,ABLATION_IID,IID,S2-ELIT,1,0.00016800000000000002,0.000136,0.00024400000000000005,0.0,0.0,654.7575757575758,83.64646464646465
+scpnrg1,unspecified,unspecified,BGWO,REFERENCE,V3-ELIT,1,0.0008879999999999999,0.000314,0.0008460000000000001,N/A,0.0,402.030303030303,49.343434343434346
+scpnrg1,unspecified,unspecified,BPSO,REFERENCE,V3-ELIT,1,0.002484,0.001016,0.002332,N/A,0.0,1080.909090909091,134.37373737373738
+scpnrg1,unspecified,unspecified,BPWO,PWO,S2-ELIT,1,0.000296,7.2e-05,0.000196,0.8686868686868687,0.0,340.4949494949495,35.93939393939394

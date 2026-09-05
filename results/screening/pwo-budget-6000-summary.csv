@@ -1,0 +1,7 @@
+instance,role,scale,reference_type,algorithm,movement_mode,scheme,runs,cost_best,cost_mean,cost_std,cost_median,cost_q1,cost_q3,cost_iqr,cost_worst,rpd_mean,rpd_median,feasible_rate,runtime_mean_seconds,best_evaluation_median,added_per_evaluation_mean,removed_per_evaluation_mean
+scpnrg1,calibration,very_large,best_known,ABLATION_IID,IID,S2-ELIT,1,180.0,180.0,0.0,180.0,180.0,180.0,0.0,180.0,2.272727272727273,2.272727272727273,1.0,130.7875151252374,90.0,65.26566666666666,16.539
+scpnrg1,calibration,very_large,best_known,BGWO,REFERENCE,V3-ELIT,1,178.0,178.0,0.0,178.0,178.0,178.0,0.0,178.0,1.1363636363636365,1.1363636363636365,1.0,99.87926787510514,1741.0,39.9515,13.136833333333334
+scpnrg1,calibration,very_large,best_known,BPSO,REFERENCE,V3-ELIT,1,180.0,180.0,0.0,180.0,180.0,180.0,0.0,180.0,2.272727272727273,2.272727272727273,1.0,199.49627908319235,1501.0,108.108,22.043666666666667
+scpnrg1,calibration,very_large,best_known,BPWO,PWO,S2-ELIT,1,180.0,180.0,0.0,180.0,180.0,180.0,0.0,180.0,2.272727272727273,2.272727272727273,1.0,92.34723708359525,88.0,33.58383333333333,11.529833333333332
+scpnrg1,calibration,very_large,best_known,BPWO,PWO,V3-ELIT,1,178.0,178.0,0.0,178.0,178.0,178.0,0.0,178.0,1.1363636363636365,1.1363636363636365,1.0,94.57577158277854,1023.0,38.390166666666666,13.886666666666667
+scpnrg1,calibration,very_large,best_known,GREEDY,N/A,N/A,1,189.0,189.0,0.0,189.0,189.0,189.0,0.0,189.0,7.386363636363637,7.386363636363637,1.0,0.06751562468707561,1.0,130.0,14.0
