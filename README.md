@@ -12,6 +12,29 @@ ecuaciones de movimiento vectoriales, una binarización de dos pasos y una
 reparación constructiva. El aporte del trabajo no es una mejora de costo sino el
 diagnóstico de por qué el movimiento continuo no se transmite a los bits.
 
+## Algoritmo de origen
+
+Painted Wolf Optimization fue propuesto por Saeid Sheikhi. Este trabajo lo toma
+como inspiración y no como objeto de estudio: BPWO conserva sus referencias
+funcionales, el rally que selecciona el modo de búsqueda y las tres ramas de
+movimiento, pero la forma exacta de las ecuaciones implementadas aquí pertenece
+a BPWO y se declara por completo en el informe.
+
+- S. Sheikhi, "Painted wolf optimization: a novel nature-inspired metaheuristic
+  algorithm for real-world optimization problems", *Computers, Materials &
+  Continua*, vol. 87, n.º 2, 2026.
+  [doi:10.32604/cmc.2026.077788](https://doi.org/10.32604/cmc.2026.077788)
+- S. Sheikhi, *Painted-Wolf-Optimization*, repositorio oficial.
+  [github.com/saeidsheikhi/Painted-Wolf-Optimization](https://github.com/saeidsheikhi/Painted-Wolf-Optimization)
+
+El protocolo experimental, la binarización de dos pasos y la elección de
+comparadores siguen el antecedente más próximo en el dominio binario:
+
+- B. Crawford, F. Cisternas-Caneo, R. Soto *et al.*, "Binary Secretary Bird
+  Optimization Algorithm for the Set Covering Problem", *Mathematics*, vol. 13,
+  n.º 15, art. 2482, 2025.
+  [doi:10.3390/math13152482](https://doi.org/10.3390/math13152482)
+
 ## Qué contiene
 
 ```text
