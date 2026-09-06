@@ -6,6 +6,9 @@ de una variante binaria de Painted Wolf Optimization para Set Covering*.
 Maverick Gayoso y Rogelio González. MII902 Optimización Estocástica, Magíster en
 Ingeniería Informática, Pontificia Universidad Católica de Valparaíso, 2026.
 
+El [informe completo](report/Gayoso-Gonzalez-2026-BPWO-Set-Covering.pdf) se
+incluye en PDF para consulta y referencia académica.
+
 BPWO toma Painted Wolf Optimization, una metaheurística poblacional continua, y
 la adapta al Set Covering Problem mediante un estado latente sincronizado, tres
 ecuaciones de movimiento vectoriales, una binarización de dos pasos y una
@@ -38,6 +41,7 @@ comparadores siguen el antecedente más próximo en el dominio binario:
 ## Qué contiene
 
 ```text
+report/          informe final en PDF
 src/bpwo/        algoritmo, comparadores, binarización, reparación e inferencia
 scripts/         derivaciones que producen las tablas del informe
 tests/           39 pruebas sobre lectura de instancias, binarización,
@@ -134,8 +138,9 @@ límites y las dos convenciones de denominador del proxy.
 ## Qué no está aquí
 
 Este repositorio acompaña al informe y contiene lo necesario para verificarlo y
-reproducirlo. No incluye las fuentes de composición del documento, las figuras,
-los materiales de referencia ni la documentación interna del proyecto.
+reproducirlo. Incluye el informe final en PDF, pero no sus fuentes de
+composición, las figuras por separado, los materiales de referencia ni la
+documentación interna del proyecto.
 
 Dos archivos de pruebas adicionales viven junto al manuscrito y no aquí, porque
 comparan las tablas publicadas celda a celda contra los CSV derivados y
@@ -143,7 +148,7 @@ necesitan el texto del informe para funcionar.
 
 ## Cómo citar
 
-Para citar el informe:
+Para citar el [informe](report/Gayoso-Gonzalez-2026-BPWO-Set-Covering.pdf):
 
 > M. Gayoso y R. González, “Diseño, evaluación y diagnóstico de una variante
 > binaria de Painted Wolf Optimization para Set Covering”, informe de curso,
@@ -164,7 +169,10 @@ GitHub también puede generar la cita del software a partir de
 El código y la documentación propios de este repositorio se distribuyen bajo la
 [licencia MIT](LICENSE). Los CSV derivados contenidos en `results/` se
 distribuyen bajo [Creative Commons Atribución 4.0 Internacional
-(CC BY 4.0)](LICENSE-DATA.md). Las instancias externas no forman parte del
-repositorio y conservan las condiciones establecidas por sus fuentes. Estas
-licencias permiten reutilizar los materiales, mientras que la referencia
-académica se especifica por separado en `CITATION.cff`.
+(CC BY 4.0)](LICENSE-DATA.md). El informe incluido en `report/` se ofrece para
+consulta académica y conserva los derechos de sus autores; no queda cubierto
+por las licencias MIT o CC BY 4.0 de este repositorio. Las instancias externas
+no forman parte del repositorio y conservan las condiciones establecidas por
+sus fuentes. Los materiales de terceros incorporados en el informe conservan
+las condiciones de sus respectivas fuentes. La referencia académica se
+especifica por separado en `CITATION.cff`.
