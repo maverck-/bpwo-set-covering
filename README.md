@@ -43,27 +43,50 @@ scripts/         derivaciones que producen las tablas del informe
 tests/           39 pruebas sobre lectura de instancias, binarización,
                  reparación, factibilidad, reproducibilidad y presupuesto
 results/         resultados agregados y CSV derivados que sostienen las tablas
-instancias/      manifiesto de las 22 instancias con su rol y su referencia
+instancias/      manifiestos de las instancias y sus particiones experimentales
 ```
+
+[`REPRODUCIBILITY.md`](REPRODUCIBILITY.md) relaciona cada experimento del
+informe con su comando, sus insumos y sus salidas versionadas.
 
 ## Instalación
 
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install -e ".[analysis]"
-.venv/bin/python -m pytest tests/ -q
+.venv/bin/python -m unittest discover -s tests
 ```
 
-Requiere Python 3.11 o superior. El experimento se ejecutó con Python 3.13.15 y
-NumPy 2.5.1 en macOS arm64; el análisis estadístico usa SciPy 1.18.1.
+Las pruebas usan la biblioteca estándar `unittest` y no requieren `pytest`.
+El código admite Python 3.11 o superior. Para reconstruir el entorno del
+experimento principal con las versiones registradas en sus CSV:
+
+```bash
+python3.13 -m venv .venv
+.venv/bin/pip install -r requirements-reproduction.txt
+.venv/bin/pip install -e . --no-deps
+```
+
+El experimento principal se ejecutó con Python 3.13.15, NumPy 2.5.1 y SciPy
+1.18.1 en macOS arm64. Algunos experimentos de desarrollo registran otras
+versiones en sus propias filas. `uv.lock` conserva el entorno de verificación
+actual, no reemplaza ese registro histórico.
 
 ## Instancias
 
 Las instancias son las de la OR-Library de Beasley y no se redistribuyen aquí.
-`instancias/manifiesto.csv` declara las 22 usadas, su partición entre
-calibración y test, su escala y si la referencia es el óptimo o el mejor valor
-conocido. Los archivos `scpNN.txt` se descargan de la OR-Library y se dejan en
-un directorio que después se pasa como `--instances-root`.
+También están disponibles en el
+[repositorio OII-450-1-2024](https://github.com/FelipeCisternasCaneo/OII-450-1-2024/tree/master/src/problem/SCP/Instances)
+usado por el proyecto. `instancias/manifiesto.csv` declara las 22 instancias de
+calibración y test. `instancias/manifiesto-desarrollo.csv` registra además las
+particiones de desarrollo, validación y reserva descritas en el informe. Ambos
+manifiestos incluyen la escala y distinguen entre óptimo y mejor valor
+conocido. Los archivos `scpNN.txt` se dejan en un directorio que después se
+pasa como `--instances-root`:
+
+```bash
+INSTANCES_ROOT=/ruta/a/SCP/Instances
+```
 
 ## Reproducir el experimento principal
 
@@ -73,7 +96,7 @@ corrida:
 ```bash
 .venv/bin/python -m bpwo.final_experiment \
     --manifest instancias/manifiesto.csv \
-    --instances-root <ruta a las instancias> \
+    --instances-root "$INSTANCES_ROOT" \
     --role test \
     --checkpoint-dir results/final/checkpoints \
     --output results/final/results.csv \
@@ -83,6 +106,10 @@ corrida:
 Cada corrida usa su propia semilla y su propio generador, de modo que el
 resultado es determinista y no depende del orden de ejecución ni del número de
 procesos.
+
+El resto de los comandos, incluidos los que reconstruyen las Tablas 6 y 7 y
+los experimentos de diagnóstico, está en
+[`REPRODUCIBILITY.md`](REPRODUCIBILITY.md).
 
 ## Derivaciones
 
@@ -94,7 +121,7 @@ falta su insumo.
 | Script | Produce | Sostiene |
 |:---|:---|:---|
 | `derivar_contraste_dirigido.py` | `results/rules/contraste-dirigido.csv` y `poda-por-escala.csv` | Tabla 7, contraste dirigido sobre calibración |
-| `derivar_proxy_conservacion.py` | `results/conservacion/proxy-por-instancia.csv` y `proxy-por-corrida.csv` | El proxy de conservación y su emparejamiento con la medición |
+| `derivar_proxy_conservacion.py` | `results/conservacion/proxy-por-instancia.csv` y `proxy-por-corrida.csv` | Aproximación diagnóstica de la conservación y su emparejamiento con la medición |
 | `medir_conservacion.py` | `results/conservacion/solapamiento-medido.csv` | Tabla 6, conservación medida sobre 165 corridas |
 
 `medir_conservacion.py` envuelve la binarización para observar cuántas columnas
@@ -110,6 +137,6 @@ Este repositorio acompaña al informe y contiene lo necesario para verificarlo y
 reproducirlo. No incluye las fuentes de composición del documento, las figuras,
 los materiales de referencia ni la documentación interna del proyecto.
 
-Dos pruebas adicionales viven junto al manuscrito y no aquí, porque comparan las
-tablas publicadas celda a celda contra los CSV derivados y necesitan el texto
-del informe para funcionar.
+Dos archivos de pruebas adicionales viven junto al manuscrito y no aquí, porque
+comparan las tablas publicadas celda a celda contra los CSV derivados y
+necesitan el texto del informe para funcionar.

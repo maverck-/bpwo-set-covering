@@ -1,7 +1,7 @@
 # Resultados de calibración
 
-Esta carpeta conserva salidas crudas y resúmenes reproducibles. Ningún archivo
-corresponde al conjunto de test ni al experimento final.
+Esta carpeta conserva resultados y resúmenes reproducibles de calibración.
+Ningún archivo corresponde al conjunto de test ni al experimento final.
 
 ## Series
 
@@ -16,9 +16,10 @@ corresponde al conjunto de test ni al experimento final.
 | `pwo-budget-6000` | Suite final completa en `scpnrg1` para medir costo | 0 | 6000 |
 | `pwo-calibration-6000` | Selección definitiva S2-ELIT frente a V3-ELIT en once instancias | 0 a 4 | 6000 |
 
-Los archivos `*-history.csv` contienen las trayectorias por iteración;
-`*-summary*.csv`, los estadísticos descriptivos; `*-ranking*.csv`, los rangos
-por mediana de RPD, y `*-mechanism.csv`, las métricas internas del mecanismo.
+Las trayectorias `*-history.csv` se generan junto con cada experimento, pero no
+se versionan por su tamaño. Los archivos `*-summary*.csv` contienen los
+estadísticos descriptivos; `*-ranking*.csv`, los rangos por mediana de RPD, y
+`*-mechanism.csv`, las métricas internas del mecanismo.
 
 ## Alcance interpretativo
 

@@ -2,9 +2,9 @@
 
 """Mide el solapamiento real entre el incumbente y la propuesta, antes de reparar.
 
-La sección 5.6 del informe declara que los resultados no registran ese
-solapamiento y por eso construye el proxy $\\widehat C_{rep}$. Este script lo
-registra, sin modificar el código de producción.
+La sección 5.6 del informe usa esta medición como evidencia principal y conserva
+el proxy $\\widehat C_{rep}$ como aproximación diagnóstica. Este script produce
+las 165 filas que sostienen la Tabla 6 sin modificar el código de producción.
 
 La regla ELIT de (15) escribe el bit del incumbente cuando el sorteo cae bajo la
 transferencia y cero en otro caso, de modo que para una columna activa en el
@@ -71,7 +71,8 @@ OPTIMOS = {
     "scpnrf2": 15.0, "scpnrg2": 154.0, "scpnrh2": 63.0,
 }
 
-# Transferencia evaluada donde vive la variable de estado de cada configuración.
+# Valores de referencia de la transferencia. En BPWO e IID son predicciones; en
+# BGWO, T(1) es una referencia para medir el déficit; en BPSO, T(0) es una cota.
 ANALITICO = {
     "BPSO": 0.0, "IID": 0.4142, "BGWO": 0.7071,
     "BPWO-V3": 0.7071, "BPWO-S2": 0.7311,
@@ -178,7 +179,7 @@ def main() -> None:
         escritor.writeheader()
         escritor.writerows(filas)
 
-    print(f"\n{'configuración':10s} {'analít':>7s} {'real':>8s} {'|real−an|':>10s} "
+    print(f"\n{'configuración':10s} {'refer':>7s} {'real':>8s} {'|real−ref|':>10s} "
           f"{'|estado|':>9s} {'corridas':>9s}")
     for rotulo in ANALITICO:
         sub = [f for f in filas if f["configuracion"] == rotulo]

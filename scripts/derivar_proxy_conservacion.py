@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 
-"""Extiende a las once instancias de test el proxy de conservación de la Tabla 6.
+"""Deriva y audita el proxy auxiliar de conservación en las once instancias.
 
-El informe estima $\\widehat C_{rep} = 1 - (\\bar A - \\bar E)/|x_g|$ sobre `scp42`
-y lo compara con el valor analítico de la transferencia evaluada en el estado de
-cada configuración. Este script repite ese cálculo en las once instancias y
-emite las dos convenciones de denominador que conviven en 5.6, porque no dan lo
-mismo:
+La sección 5.6 usa la medición directa como evidencia principal y conserva
+$\\widehat C_{rep} = 1 - (\\bar A - \\bar E)/|x_g|$ como aproximación
+diagnóstica. Este script reconstruye el proxy y emite dos convenciones de
+denominador que no dan lo mismo:
 
 * `ciclo`: promedia sobre las 5990 evaluaciones del ciclo, excluyendo las diez
   de inicialización. Es la convención que enuncia la definición de 5.6 y la que
   usan sus cifras en prosa, 19.51 columnas agregadas y 2.58 eliminadas.
-* `total6000`: divide el total de la corrida por el presupuesto completo. Es la
-  que produjo las cifras publicadas en la Tabla 6.
+* `total6000`: divide el total de la corrida por el presupuesto completo. Es una
+  convención histórica que documenta el efecto de incluir la inicialización; ya
+  no produce la Tabla 6 del informe actual.
 
 La inicialización repara una población aleatoria densa cuya poda escala con el
 número de columnas, de modo que repartirla entre 6000 evaluaciones contamina el
@@ -57,14 +57,14 @@ COLUMNAS = {
     "scpnrg2": 10000, "scpnrh2": 10000,
 }
 
-# Transferencia evaluada donde vive la variable de estado de cada configuración.
-# V3(±1)=1/raíz(2) para las posiciones sincronizadas, S2(+1) bajo S2, la media de
-# V3 sobre el muestreo uniforme de IID es raíz(2)-1, y la velocidad de BPSO tiende
-# a cero sin alcanzarlo, de modo que su valor es una cota y no una predicción.
+# Valores de referencia de la transferencia. V3(±1)=1/raíz(2) para las
+# posiciones sincronizadas, S2(+1) bajo S2 y la media de V3 sobre el muestreo
+# uniforme de IID es raíz(2)-1. En BGWO, V3(1) permite cuantificar el déficit
+# causado por la dispersión. En BPSO, V3(0) es una cota y no una predicción.
 CONFIGURACIONES = (
     ("BPSO", "V3-ELIT", "BPSO", "velocidad", 0.0),
     ("ABLATION_IID", "V3-ELIT", "IID", "muestreo uniforme", 0.4142),
-    ("BGWO", "V3-ELIT", "BGWO", "posición sincronizada", 0.7071),
+    ("BGWO", "V3-ELIT", "BGWO", "posición con dispersión", 0.7071),
     ("BPWO", "V3-ELIT", "BPWO-V3", "posición sincronizada", 0.7071),
     ("BPWO", "S2-ELIT", "BPWO-S2", "posición sincronizada", 0.7311),
 )
@@ -250,7 +250,7 @@ def main() -> None:
         escritor.writerows(filas)
 
     print("Proxy de conservación por instancia, las dos convenciones.\n")
-    print(f"{'configuración':10s} {'analít':>7s} {'ciclo':>17s} {'total/6000':>17s}")
+    print(f"{'configuración':10s} {'refer':>7s} {'ciclo':>17s} {'total/6000':>17s}")
     print(f"{'':10s} {'':7s} {'media':>8s} {'desv':>8s} {'media':>8s} {'desv':>8s}")
     for _, _, rotulo, _, analitico in CONFIGURACIONES:
         sub = [f for f in filas if f["configuracion"] == rotulo]

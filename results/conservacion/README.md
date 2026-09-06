@@ -1,17 +1,16 @@
-# Conservación: proxy extendido y medición directa
+# Conservación: medición directa y proxy auxiliar
 
-Material de auditoría de la Tabla 6 y de la sección 5.6 del informe. Nada de
-esto está incorporado al informe todavía.
+Material de respaldo de la Tabla 6 y de la sección 5.6 del informe. La medición
+directa es la evidencia principal publicada. El proxy se conserva como una
+aproximación diagnóstica para resultados que no registren el solapamiento bit a
+bit.
 
-La sección 5.6 sostiene que la probabilidad de conservación, esto es la
-probabilidad de que una columna activa del incumbente siga activa en la
-propuesta binaria antes de reparar, se deriva de la regla ELIT de (15) y vale la
-transferencia evaluada en el estado propuesto. Como los resultados del test no
-registraban el solapamiento bit a bit, el informe la contrasta mediante el proxy
-$\widehat C_{rep} = 1 - (\bar A - \bar E)/|x_g|$, estimado sobre `scp42`.
-
-Estos dos archivos extienden ese contraste a las once instancias de test y
-añaden la medición directa que faltaba.
+La sección 5.6 define la probabilidad de conservación como la probabilidad de
+que una columna activa del incumbente siga activa en la propuesta binaria antes
+de reparar. Bajo ELIT, esa probabilidad es la transferencia evaluada en el
+estado propuesto. `solapamiento-medido.csv` registra directamente esa cantidad
+en las once instancias de test. Los otros dos CSV permiten auditar el proxy
+$\widehat C_{rep} = 1 - (\bar A - \bar E)/|x_g|$ y sus límites.
 
 ## `proxy-por-corrida.csv`
 
@@ -26,10 +25,10 @@ Genera: `scripts/derivar_proxy_conservacion.py`. Deriva el proxy en las once
 instancias a partir de `results/final/`, en las dos convenciones de denominador
 que conviven en 5.6.
 
-| Convención | Denominador | Dónde aparece en el informe |
+| Convención | Denominador | Relación con el informe actual |
 |:---|:---|:---|
-| `proxy_ciclo` | 5990 evaluaciones del ciclo | La definición de 5.6 y sus cifras en prosa, 19.51 y 2.58 |
-| `proxy_total6000` | 6000 evaluaciones del presupuesto | Las cifras publicadas en la Tabla 6 |
+| `proxy_ciclo` | 5990 evaluaciones del ciclo | Aproximación diagnóstica comparada con la medición directa en 5.6 |
+| `proxy_total6000` | 6000 evaluaciones del presupuesto | Convención histórica conservada para mostrar el efecto de incluir la inicialización |
 
 Las dos no dan lo mismo. La inicialización repara una población aleatoria densa
 cuya poda escala con el número de columnas, de modo que repartirla entre 6000
@@ -38,7 +37,7 @@ evaluaciones contamina el promedio, y contamina más en instancias grandes. En
 sesgo sube a +0.08 y produce valores por sobre el máximo de la curva, que es
 imposible para una probabilidad de conservación.
 
-| Configuración | Analítico | `ciclo` | `total6000` |
+| Configuración | Referencia de transferencia | `ciclo` | `total6000` |
 |:---|---:|---:|---:|
 | BPSO | 0.0000 | 0.1755 | 0.2560 |
 | IID | 0.4142 | **0.4140** | 0.4939 |
@@ -50,9 +49,9 @@ Con la convención del ciclo el orden se cumple en las 11 instancias.
 
 ## `solapamiento-medido.csv`
 
-Genera: `scripts/medir_conservacion.py`. Registra el solapamiento que 5.6
-declara no haber registrado. Una fila por configuración, instancia y semilla,
-165 en total, cada una sobre las 5990 propuestas del ciclo de esa corrida.
+Genera: `scripts/medir_conservacion.py`. Registra el solapamiento publicado en
+5.6. Contiene una fila por configuración, instancia y semilla, 165 en total,
+cada una sobre las 5990 propuestas del ciclo de esa corrida.
 
 | Columna | Qué contiene |
 |:---|:---|
@@ -62,18 +61,19 @@ declara no haber registrado. Una fila por configuración, instancia y semilla,
 
 Resultado, promediado sobre las once instancias:
 
-| Configuración | Analítico | `real` | Error medio | `estado_medio` |
+| Configuración | Referencia | `real` | Error medio | `estado_medio` |
 |:---|---:|---:|---:|---:|
 | BPWO-V3 | 0.7071 | **0.7069** | **0.0006** | 0.9997 |
 | BPWO-S2 | 0.7311 | **0.7300** | 0.0011 | 0.9997 |
 | IID | 0.4142 | **0.4142** | **0.0006** | 0.5001 |
 | BGWO | 0.7071 | 0.6888 | 0.0183 | 0.9948 |
-| BPSO | cota 0 | 0.1679 | no aplica | 0.0706 a 0.8163 |
+| BPSO | cota 0 | 0.1678 | no aplica | 0.0706 a 0.8163 |
 
 Tres lecturas:
 
-1. `esperada` y `real` coinciden en las 55 filas, como exige la regla, de modo
-   que la medición es consistente consigo misma.
+1. `esperada` y `real` coinciden al agregarse en las 55 combinaciones de
+   configuración e instancia, como exige la regla. La medición es consistente
+   consigo misma.
 2. `estado_medio` verifica el supuesto que sostiene todo el cálculo analítico.
    La sincronización (4) deja el estado en ±1: la media del valor absoluto es
    0.9997 en las dos variantes de BPWO. En IID es 0.5001, contra la media del
@@ -84,9 +84,11 @@ Tres lecturas:
 | Convención | Pearson | Spearman | MAE | Sesgo | Error máx |
 |:---|---:|---:|---:|---:|---:|
 | `proxy_ciclo` | 0.9963 | 0.9592 | 0.0138 | +0.0042 | 0.0747 |
-| `proxy_total6000`, el publicado | 0.9601 | 0.8013 | 0.0840 | +0.0840 | 0.2594 |
+| `proxy_total6000`, histórico | 0.9601 | 0.8013 | 0.0840 | +0.0840 | 0.2594 |
 
-Lo que queda validado es la convención del ciclo, no la que produjo la Tabla 6.
+Solo la convención del ciclo aproxima adecuadamente la medición directa. La
+convención histórica se conserva para documentar por qué la inicialización no
+debe mezclarse con las evaluaciones del ciclo.
 
 Además, ese 0.9963 lo empuja la separación entre configuraciones. Dentro de cada
 una, la asociación entre instancias es mucho más débil, en parte porque la
@@ -103,9 +105,10 @@ conservación real casi no varía y queda poco que correlacionar:
 El proxy es una aproximación agregada, no un sustituto de la medición directa ni
 un estimador de la variación entre instancias.
 
-## Dos correcciones al valor analítico
+## Dos precisiones sobre la referencia de transferencia
 
-**BGWO no vale 0.7071.** Mide 0.6888, sistemáticamente por debajo. Su
+**La conservación de BGWO no vale 0.7071.** Mide 0.6888, sistemáticamente por
+debajo. Su
 `estado_medio` va de 0.9751 a 1.0020, contra el rango de 0.9996 a 0.9998 de
 BPWO: no clava el estado con la misma firmeza. Como V3 es cóncava, el déficit se
 descompone en corrimiento de la media más brecha de Jensen,
@@ -131,7 +134,7 @@ dispersión.
 
 **La velocidad de BPSO no converge a un valor común.** Va de 0.0706 en `scp42` a
 0.8163 en `scpnrf2`, un factor de doce, y su conservación la acompaña de 0.0359
-a 0.3976. El valor analítico de cero es una cota inferior y no una predicción.
+a 0.3976. La referencia $T_{V3}(0)=0$ es una cota inferior y no una predicción.
 El marco se sostiene igual: la correlación entre `estado_medio` y `real` en las
 once instancias es 0.9986.
 

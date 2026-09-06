@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Si utiliza este código o sus datos derivados, cite el informe y este repositorio."
+title: "BPWO para Set Covering: código, datos derivados y pruebas"
+type: software
+authors:
+  - family-names: Gayoso
+    given-names: Maverick
+  - family-names: González
+    given-names: Rogelio
+version: 0.1.0
+date-released: 2026-09-05
+repository-code: "https://github.com/maverck-/bpwo-set-covering"
