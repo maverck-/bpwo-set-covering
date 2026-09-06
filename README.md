@@ -140,3 +140,11 @@ los materiales de referencia ni la documentación interna del proyecto.
 Dos archivos de pruebas adicionales viven junto al manuscrito y no aquí, porque
 comparan las tablas publicadas celda a celda contra los CSV derivados y
 necesitan el texto del informe para funcionar.
+
+## Licencia
+
+El código y la documentación propios de este repositorio se distribuyen bajo la
+[licencia MIT](LICENSE). Las instancias externas no forman parte del repositorio
+y conservan las condiciones establecidas por sus fuentes. La licencia permite
+reutilizar el software, pero la referencia académica del trabajo se indica por
+separado en `CITATION.cff`.
