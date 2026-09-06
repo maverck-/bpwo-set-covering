@@ -141,10 +141,30 @@ Dos archivos de pruebas adicionales viven junto al manuscrito y no aquí, porque
 comparan las tablas publicadas celda a celda contra los CSV derivados y
 necesitan el texto del informe para funcionar.
 
+## Cómo citar
+
+Para citar el informe:
+
+> M. Gayoso y R. González, “Diseño, evaluación y diagnóstico de una variante
+> binaria de Painted Wolf Optimization para Set Covering”, informe de curso,
+> MII902 Optimización Estocástica, Magíster en Ingeniería Informática,
+> Pontificia Universidad Católica de Valparaíso, 2026.
+
+Para citar el código y los datos derivados:
+
+> M. Gayoso y R. González, *BPWO para Set Covering: código, datos derivados y
+> pruebas*, versión 0.1.0, 2026. Disponible en:
+> <https://github.com/maverck-/bpwo-set-covering>.
+
+GitHub también puede generar la cita del software a partir de
+[`CITATION.cff`](CITATION.cff).
+
 ## Licencia
 
 El código y la documentación propios de este repositorio se distribuyen bajo la
-[licencia MIT](LICENSE). Las instancias externas no forman parte del repositorio
-y conservan las condiciones establecidas por sus fuentes. La licencia permite
-reutilizar el software, pero la referencia académica del trabajo se indica por
-separado en `CITATION.cff`.
+[licencia MIT](LICENSE). Los CSV derivados contenidos en `results/` se
+distribuyen bajo [Creative Commons Atribución 4.0 Internacional
+(CC BY 4.0)](LICENSE-DATA.md). Las instancias externas no forman parte del
+repositorio y conservan las condiciones establecidas por sus fuentes. Estas
+licencias permiten reutilizar los materiales, mientras que la referencia
+académica se especifica por separado en `CITATION.cff`.
