@@ -151,8 +151,8 @@ necesitan el texto del informe para funcionar.
 Para citar el [informe](report/Gayoso-Gonzalez-2026-BPWO-Set-Covering.pdf):
 
 > M. Gayoso y R. González, “Diseño, evaluación y diagnóstico de una variante
-> binaria de Painted Wolf Optimization para Set Covering”, informe de curso,
-> MII902 Optimización Estocástica, Magíster en Ingeniería Informática,
+> binaria de Painted Wolf Optimization para Set Covering”, informe del proyecto
+> de curso, MII902 Optimización Estocástica, Magíster en Ingeniería Informática,
 > Pontificia Universidad Católica de Valparaíso, 2026.
 
 Para citar el código y los datos derivados:
